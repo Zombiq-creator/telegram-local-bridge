@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-local-bridge"
+version = "0.1.0"
+description = "Safe local-process control via Telegram: deny-by-default path allowlist, audit log, single-use approval tokens, lockfile-based watchdog supervision. Stdlib-only, MIT."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+authors = [
+    {name = "telegram-local-bridge contributors"},
+]
+maintainers = [
+    {name = "telegram-local-bridge contributors"},
+]
+
+# Keywords for PyPI search and pip search. Lowercase, comma-separated.
+keywords = [
+    "telegram",
+    "telegram-bot",
+    "telegram-bot-api",
+    "bot",
+    "chatbot",
+    "audit",
+    "audit-log",
+    "approval",
+    "approval-workflow",
+    "approval-tokens",
+    "watchdog",
+    "supervision",
+    "process-management",
+    "process-supervision",
+    "path-allowlist",
+    "path-whitelist",
+    "safe-io",
+    "inline-keyboard",
+    "long-polling",
+    "deny-by-default",
+    "single-user",
+    "single-owner",
+    "ai-agent",
+    "ai-agents",
+    "agent",
+    "local-automation",
+    "local-process",
+    "stdlib",
+    "stdlib-only",
+    "python",
+    "python3",
+    "no-dependencies",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: System Utilities",
+    "Topic :: Communications :: Conferencing",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Security",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+# Stdlib-only — no runtime dependencies.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/<your-username>/telegram-local-bridge"
+Repository = "https://github.com/<your-username>/telegram-local-bridge"
+Issues = "https://github.com/<your-username>/telegram-local-bridge/issues"
+Changelog = "https://github.com/<your-username>/telegram-local-bridge/releases"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["telegram_local_bridge*"]
+
+[tool.setuptools.package-data]
+telegram_local_bridge = ["demo.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
